@@ -1,5 +1,9 @@
 import React from 'react';
 
+import Movie from './Movie';
+
+//console.log("movies:",Movies);
+
 const MovieList = props => {
   return (
     <div className="movie-list">

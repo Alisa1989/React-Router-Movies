@@ -48,7 +48,4 @@ const App = () => {
   );
 };
 
-    // <Route path= "/movies/:id">
-    //   <Movie movieID = {movie.id}/>
-    // </Route>
 export default App;

@@ -36,16 +36,16 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <div>Replace this Div with your Routes</div>
-   
+    
     <Route exact path= "/">
       <MovieList movies = {movieList} /> 
     </Route> 
     
-    <Route path= "/movies/:id" component= {Movie}/>
-
+    <Route path= "/movies/:id" component= {Movie}/> 
     </div>
   );
 };
+//route that is rendering a component it automatically sends props down.
+//it has "match" by default from the "history" which is used to match params
 
 export default App;

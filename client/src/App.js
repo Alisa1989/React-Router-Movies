@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+import { Route } from "react-router-dom";
+
 import SavedList from './Movies/SavedList';
+import MovieList from './Movies/MovieList';
+import Movie     from './Movies/Movie';
+
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
@@ -21,6 +27,8 @@ const App = () => {
     getMovies();
   }, []);
 
+  console.log("Movie List: " ,movieList);
+
   const addToSavedList = movie => {
     setSavedList([...savedList, movie]);
   };
@@ -28,9 +36,16 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <div>Replace this Div with your Routes</div>
+    
+    <Route exact path= "/">
+      <MovieList movies = {movieList} /> 
+    </Route> 
+    
+    <Route path= "/movies/:id" component= {Movie}/> 
     </div>
   );
 };
+//route that is rendering a component it automatically sends props down.
+//it has "match" by default from the "history" which is used to match params
 
 export default App;
